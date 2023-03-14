@@ -13,4 +13,7 @@ I chose to save as little information as possible, in order to reach the hightes
 
 To utilize this function, there are multiple approaches. We can iterate through the diagonal lists and print each one, which is the goal of the assignement. Alternately, we could simply increase a counter and spit out the total number, since printing takes a long time. The last approach is to append each diagonal list to a Master Set. This is a way to store all the triangulations. The PRINTING and COUNTING approaches are implemented, while the STORING approach is in the comments.
 
-This progam was able to COUNT up to n=20 and PRINT up to n=18, each in a few minutes. In addition, it can COUNT up to n=14 and PRINT up to n=13 instantly.
+This progam was able PRINT up to n=18 in a few minutes. In addition, it can COUNT up to n=14 and PRINT up to n=13 instantly.
+
+n=20 took 7.7 minutes
+n=21 took 28.9 minutes (1736 seconds)
