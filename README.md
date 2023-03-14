@@ -15,5 +15,6 @@ To utilize this function, there are multiple approaches. We can iterate through 
 
 This progam was able PRINT up to n=18 in a few minutes. In addition, it can COUNT up to n=14 and PRINT up to n=13 instantly.
 
+Counting
 - n=20 took 7.7 minutes
 - n=21 took 28.9 minutes (1736 seconds)
