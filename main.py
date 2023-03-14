@@ -12,6 +12,8 @@ def tricounter(n):
             count+=2*tric(m-1)
             arr[m]=count
             return count
+    for m in range(4,n):
+        tric(m)
     return tric(n)
 
 def triangulations(n,pr=False):
@@ -36,27 +38,30 @@ def triangulations(n,pr=False):
     #We now use this generator to count (and print) all the traingulations
     count=0
     perc = tricounter(n) // 100
+    # Master_Set=set()
     for i in trilist(list(range(n))):
         if pr:
             print(i)
         count+=1
+        # Master_Set.add(i)
         if n>15 and not pr:
             if count%perc==0:
                 print("{}%".format(count//perc),end=" ")
                 if count%(perc*20)==0:
                     print()
     return count
-
-N=int(input("How many vertices in the polygon? Enter a number: "))
-while N<3:
+N=0
+try: N=int(input("How many vertices in the polygon? Enter a number: "))
+except: pass
+while N<3 or N>100000:
     print("Input error, try again.")
     N = int(input("How many vertices in your polygon? Enter a number: "))
 
 print()
 if N>25:
-    print("That is likely too many to find them all. I recommend only counting.")
+    print("That is likely too many to find them all. I recommend only calculating.")
 
-want_to_find=input("Finding triangulations is slow, but Counting is fast. Would you like to FIND all triangulations? Y for yes, N for no: ") in ("y","Y","yes","Yes")
+want_to_find=input("Finding triangulations is slow, but calculating is fast. Would you like to FIND all triangulations? Y for yes, N for no: ") in ("y","Y","yes","Yes")
 
 if want_to_find:
     pr=input("PRINT all triangulations? Y for yes, N for no: ") in ("y","Y","yes","Yes","p","P","print","Print")
@@ -64,4 +69,4 @@ if want_to_find:
     print("FOUND triangulations on n={} vertices:".format(N),triangulations(N,pr))
 else:
     print()
-    print("COUNTED triangulations on n={} vertices:".format(N),tricounter(N))
+    print("CALCULATED triangulations on n={} vertices:".format(N),tricounter(N))
